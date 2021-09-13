@@ -1,8 +1,8 @@
 const express = require('express');
-const exphbs  = require('express-handlebars');
+const exphbs = require('express-handlebars');
 
 const app = express();
-const PORT =  process.env.PORT || 3017;
+const PORT = process.env.PORT || 3017;
 
 // enable the req.body object - to allow us to use HTML forms
 app.use(express.json());
@@ -16,21 +16,28 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-let counter = 0;
+const pizzaPerfect = require('./pizzaPerfect');
+const pizza = pizzaPerfect()
 
-app.get('/', function(req, res) {
+
+app.get('/', function (req, res) {
 	res.render('index', {
-		counter
+		counter: pizza.returnCost(),
+		small: pizza.returnSmall(),
+		medium: pizza.returnMedium(),
+		large: pizza.returnLarge()
 	});
 });
 
-app.post('/count', function(req, res) {
-	counter++;
+app.post('/count', function (req, res) {
+	pizza.add(req.body.actionType)
 	res.redirect('/')
 });
-
+app.get('/orders', function (req, res) {
+	res.render('orders', { order: pizza.returnOrder() })
+})
 
 // start  the server and start listening for HTTP request on the PORT number specified...
-app.listen(PORT, function() {
+app.listen(PORT, function () {
 	console.log(`App started on port ${PORT}`)
 });
