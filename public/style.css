@@ -6,11 +6,12 @@ body {
 	font-family: 'Poiret One', cursive;
 }
 
-.btn {
+.btn, .payBtns {
+	cursor: pointer;
 	padding: 1em;
 	margin: 1em;
 	font-size: 1em;
-	background-color: #3FA9E2;
+	background-color: #7dc7ee;
 	border-radius: 0.25em;
 	border: 0 solid snow;
 	color: snow;
@@ -54,14 +55,22 @@ body {
 	} */
 
 .header {
-	margin-left: 30%;
+	color: #95cfee;
+	margin-left: 35%;
 	text-align: center;
 	font-size: xx-large;
 	display: flex;
-	font-family: 'Josefin Slab', serif;
+	font-family: 'Satisfy', cursive;
 }
-.pizzaImg{
-	width: 100%;
+
+.pizzaImg {
+	margin-left: -70%;
+	width: 20%;
+}
+.back{
+	margin: 2%;
+	font-size: x-large;
+
 }
 .orderBox {
 	display: flex;
@@ -79,38 +88,34 @@ body {
 	display: none;
 }
 
+.plus, .minus {
+	cursor: pointer;
+	padding: 0.50em;
+	margin: 0.25em;
+	text-align: center;
+	background-color: #7dc7ee;
+	border-style: none;
+	color: white;
+	border-radius: 0.25em;
+	/* display:block; */
+	/* height: 3px;
+	width: 3px; */
+	/* border-radius: 50%; */
+	/* border: 1px solid red; */
+}
+.orders{
+	text-align: right;
+	font-size: larger;
+}
 .cart {
 	text-align: center;
-	/* position: fixed; */
-	width: 100%;
-	/* margin: auto; */
-	/* width: 40%; */
-	/* min-height: 15em; */
-	background-color: #d4e09b;
-	top: 0em;
-	right: 0em;
-	margin-right: 1em;
-	padding: 1em;
-	/* border: 0.1em solid; */
+		padding: 1em;
+	border: 0.4em solid;
+	border-color: #d4e09b;
 	border-radius: 0.25em;
-	/* z-index: 1000; */
 }
 
-.cartTotal {
-	position: fixed;
-	/* width: 100%; */
-	/* margin: auto; */
-	width: 20%;
-	/* min-height: 15em; */
-	background-color: #CDD93F;
-	top: 0em;
-	right: 0em;
-	margin-right: 1em;
-	padding: 1em;
-	/* border: 0.1em solid; */
-	border-radius: 0.25em;
-	/* z-index: 1000; */
-}
+
 
 .cart table {
 	border-collapse: collapse;
@@ -122,12 +127,13 @@ body {
 }
 
 .cart td {
-	border-top: 1px solid snow;
+	border: 2px solid;
+	border-color: #d4e09b;
+
 }
 
 .cart th, td {
 	padding: 15px;
-	text-align: left;
 }
 
 .cart img {
@@ -203,6 +209,8 @@ body {
 	padding: 0.5em;
 	/* background-color: ; */
 	border-radius: 1em;
+	width: 40%;
+	display: inline-block;
 }
 
 label {

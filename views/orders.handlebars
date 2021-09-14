@@ -2,29 +2,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<div class="back">
 <b><a href="/">Back</a></b>
-<table>
-    <tr>
-        <th>Orders</th>
-    </tr>
+</div>
+<form action="/orders" method="get">
 
     <table>
         <tr>
-            <th>Order ID</th>
-            <th>Status</th>
-            <th>Amount</th>
+            <th>Orders</th>
         </tr>
-        {{#each order}}
-        <tr>
-            <td>{{orderId}}</td>
-            <td>{{status}}</td>
-            <td>{{amount}}</td>
-            
-            <td><input type="button" name="status" value="pay">
-            <input type="button" class="hidden" name="status" value="collect"></td>
-        </tr>
-       
-        {{/each}}
-    </table>
 
-</table>
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Status</th>
+                <th>Amount</th>
+            </tr>
+            {{#each order}}
+            <tr>
+                <td>{{orderId}}</td>
+                <td>{{status}}</td>
+                <td>{{amount}}</td>
+
+                <td><input type="submit" class="payBtns" name="payBtns" value="pay">
+                    <input type="submit" class="payBtns" name="payBtns" value="collect">
+                </td>
+            </tr>
+
+            {{/each}}
+        </table>
+
+    </table>
+</form>

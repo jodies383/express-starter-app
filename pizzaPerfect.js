@@ -4,50 +4,67 @@ module.exports = function () {
 	let small = 0;
 	let medium = 0;
 	let large = 0;
-	let status = "Payment Due"
+	// let status = "Payment Due"
+	// let status2 = "Paid"
+	// let status3 = "Collected"
 	const order = []
 
 	function add(pizzaId) {
-		if (pizzaId === 'small') {
+		if (pizzaId === 'buy small') {
 			small += 35.00,
 				counter += 35.00;
 		}
-		else if (pizzaId === 'medium') {
+		else if (pizzaId === 'buy medium') {
 			medium += 65.00,
 				counter += 65.00;
 		}
 
-		else if (pizzaId === 'large') {
+		else if (pizzaId === 'buy large') {
 			large += 85.00,
 				counter += 85.00;
 		}
 
 	}
-	function towns(checkedRadioBtn) {
-		var cptArr = regNum.filter((reg) => reg.startsWith("CA"))
-		var paarlArr = regNum.filter((reg) => reg.startsWith("CJ"))
-		var belArr = regNum.filter((reg) => reg.startsWith("CY"))
+	function addBtns(pizzaId) {
 
-		if (checkedRadioBtn === "cpt") {
-			return cptArr
-		} else if (checkedRadioBtn === "paarl") {
-			return paarlArr
-		} else if (checkedRadioBtn === "bellville") {
-			return belArr
-		} else if (checkedRadioBtn === "all") {
-			return regNum
-		} else if (cptArr.length === 0 || paarlArr.length === 0 || belArr.length === 0 || regNum.length === 0) {
-			return noTownFound()
+		if (pizzaId === 'smallPlus') {
+			small += 35.00,
+				counter += 35.00;
 		}
-
-
+		else if (pizzaId === 'smallMinus') {
+			if (counter > 0 && small > 0) {
+				small -= 35.00,
+					counter -= 35.00;
+			}
+		}
+		else if (pizzaId === 'medPlus') {
+			medium += 65.00,
+				counter += 65.00;
+		}
+		else if (pizzaId === 'medMinus') {
+			if (counter > 0 && medium > 0) {
+				medium -= 65.00,
+					counter -= 65.00;
+			}
+		}
+		else if (pizzaId === 'largePlus') {
+			large += 85.00,
+				counter += 85.00;
+		}
+		else if (pizzaId === 'largeMinus') {
+			if (counter > 0 && large > 0) {
+				large -= 85.00,
+					counter -= 85.00;
+			}
+		}
 	}
-	function returnOrder(button) {
+
+	function returnOrder() {
 
 		if (counter > 0) {
 			order.push({
 				orderId: '#' + Math.floor((Math.random() * 100) + 1),
-				status: status,
+				status: hide(),
 				amount: 'R' + counter.toFixed(2)
 
 			});
@@ -59,11 +76,11 @@ module.exports = function () {
 		return order;
 	}
 
-	function hide(button){
+	function hide(button) {
 		if (button === "pay") {
-			status = "Paid"; 
+			return "Paid";
 		}
-		return status
+		
 	}
 	function returnCost() {
 		return counter.toFixed(2);
@@ -88,6 +105,7 @@ module.exports = function () {
 
 	return {
 		add,
+		addBtns,
 		hide,
 		returnOrder,
 		returnCost,

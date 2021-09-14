@@ -24,8 +24,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Josefin+Slab:wght@200&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,57 +33,84 @@
 
 <body>
     <div>
-        <div class="header">
-            <h1>Perfect Pizza</h1>
-            <img src="https://endlessicons.com/wp-content/uploads/2012/09/pizza-icon-614x460.png" alt="" width="25%">
-
+        <div class="orders">
+            <b><a href="/orders">Orders</a></b>
         </div>
 
-        {{!-- <div class="cartTotal ">
-            <strong>Total price</strong>
-            <span class="cartTotalPrice">0.00</span>
-            <a href="#">
-                <img src="shopping-cart.png" alt="">
-            </a>
-        </div> --}}
+        <div class="header">
+            <h1>Perfect Pizza</h1>
+            <div class="pizzaImg">
+                <img src="https://endlessicons.com/wp-content/uploads/2012/09/pizza-icon-614x460.png" alt=""
+                    width="145%">
+            </div>
+
+        </div>
 
 
         <div class="cart">
             <h3>Shopping Cart</h3>
+            <br>
             <img src="shopping-cart.png" alt="">
+            <form action="/count" method="post">
+                <table>
+                    <tr>
+                        <td><strong>Small</strong>
+                            <button class="plus" name="pizza" value="smallPlus">+</button>
+                            <button class="minus" name="pizza" value="smallMinus">-</button>
+                        </td>
 
-            <table>
-                <tr>
-                    <td><strong>Small</strong></td>
-                    <td><span class="smallTotalPrice">R{{small}}</span></td>
-                </tr>
+                        </td>
+                        </td>
 
-                <tr>
-                    <td><strong>Medium</strong>
-                        {{!-- <input class="btn addMedium" type="submit" value="addMedium">
-                        <input class="btn removeMedium" type="submit" value="removeMedium">
-                    </td> --}}
+                        <td><span class="smallTotalPrice">R{{small}}</span></td>
+                    </tr>
 
-                    <td><span class="mediumTotalPrice">R{{medium}}</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Large</strong></td>
-                    <td><span class="largeTotalPrice">R{{large}}</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Total price</strong></td>
-                    <td><span class="totalPrice">R{{counter}}</span></td>
-                </tr>
-            </table>
+                    <tr>
+                        <td><strong>Medium</strong>
+                            <button class="plus" name="pizza" value="medPlus">+</button>
+                            <button class="minus" name="pizza" value="medMinus">-</button>
+
+                        <td><span class="mediumTotalPrice">R{{medium}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Large</strong>
+                            <button class="plus" name="pizza" value="largePlus">+</button>
+                            <button class="minus" name="pizza" value="largeMinus">-</button>
+                        </td>
+                        <td><span class="largeTotalPrice">R{{large}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total price</strong></td>
+                        <td><span class="totalPrice">R{{counter}}</span></td>
+                    </tr>
+                </table>
+            </form>
             <form action="/orders" method="GET">
                 <div class="orderBox">
                     <input class="btn orderMediumPizza" type="submit" value="Order" style="margin-left: auto">
                 </div>
             </form>
+
         </div>
 
         <div class="pizzas">
             <form action="/count" method="post">
+                <div class="pizza small">
+                    <div class="info">
+                        <img src="pizza.png" alt="">
+                        <h2>Small Pizza</h2>
+                        <strong>R35.00</strong>
+                        <i>
+                            <p>
+                                Small pizza with mushroom, ham, anchovy & olives
+                            </p>
+                        </i>
+                    </div>
+                    <div class="orderBox">
+                        <input class="btn orderSmallPizza" type="submit" value="buy small" name="actionType"
+                            style="margin-left: auto">
+                    </div>
+                </div>
                 <div class="pizza medium">
                     <div class="info">
                         <img src="pizza.png" alt="">
@@ -92,14 +118,12 @@
                         <strong>R65.00</strong>
 
                         <div>
-                            medium margeritha pizza with 3 toppings max.
-                            2 or less meat topping.
-                            3 or less other toppings.
+                            medium margherita pizza with cheese, olive oil, origanum & garlic
                         </div>
                     </div>
 
                     <div class="orderBox">
-                        <input class="btn orderMediumPizza" type="submit" value="medium" name="actionType"
+                        <input class="btn orderMediumPizza" type="submit" value="buy medium" name="actionType"
                             style="margin-left: auto">
                     </div>
 
@@ -110,92 +134,18 @@
                         <h2>Large Pizza</h2>
                         <strong>R85.00</strong>
                         <div>
-                            large margeritha pizza with 3 toppings max.
-                            3 meat toppings max.
-                            3 or less other toppings.
+                            large pizza with chicken, piquanté peppers & feta cheese
                         </div>
                     </div>
                     <div class="orderBox">
-                        <input class="btn orderLargePizza" type="submit" value="large" name="actionType"
-                            style="margin-left: auto">
-                    </div>
-                </div>
-                <div class="pizza small">
-                    <div class="info">
-                        <img src="pizza.png" alt="">
-                        <h2>Small Pizza</h2>
-                        <strong>R35.00</strong>
-                        <i>
-                            <ul>
-                                <li>small pizza with 3 toppings</li>
-                                <li>1 meat topping.</li>
-                                <li>3 or less other toppings.</li>
-                            </ul>
-                        </i>
-                    </div>
-                    <div class="orderBox">
-                        <input class="btn orderSmallPizza" type="submit" value="small" name="actionType"
+                        <input class="btn orderLargePizza" type="submit" value="buy large" name="actionType"
                             style="margin-left: auto">
                     </div>
                 </div>
 
+
             </form>
-            <form action="/add" method="POST">
 
-                {{!-- <div class="pizza medium">
-                    <div class="info">
-                        <img src="pizza.png" alt="">
-                        <h2>Medium Pizza</h2>
-                        <strong>R65.00</strong>
-
-                        <div>
-                            medium margeritha pizza with 3 toppings max.
-                            2 or less meat topping.
-                            3 or less other toppings.
-                        </div>
-                    </div>
-
-                    <div class="orderBox">
-                        <button class="btn orderMediumPizza" type="submit" value="medium" name="actionType"
-                            style="margin-left: auto">Buy</button>
-                    </div>
-
-                </div>
-                <div class="pizza large">
-                    <div class="info">
-                        <img src="pizza.png" alt="">
-                        <h2>Large Pizza</h2>
-                        <strong>85.00</strong>
-                        <div>
-                            large margeritha pizza with 3 toppings max.
-                            3 meat toppings max.
-                            3 or less other toppings.
-                        </div>
-                    </div>
-                    <div class="orderBox">
-                        <button class="btn orderLargePizza" type="submit" value="large" name="actionType"
-                            style="margin-left: auto">Buy</button>
-                    </div>
-                </div>
-                <div class="pizza small">
-                    <div class="info">
-                        <img src="pizza.png" alt="">
-                        <h2>Small Pizza</h2>
-                        <strong>35.00</strong>
-                        <i>
-                            <ul>
-                                <li>small pizza with 3 toppings</li>
-                                <li>1 meat topping.</li>
-                                <li>3 or less other toppings.</li>
-                            </ul>
-                        </i>
-                    </div>
-                    <div class="orderBox">
-                        <button class="btn orderSmallPizza" type="submit" value="small" name="actionType"
-                            style="margin-left: auto">Buy</button>
-                    </div>
-                </div> --}}
-            </form>
         </div>
         <div class="footer">
             <div class="contact">
@@ -209,15 +159,6 @@
 <script src="pizza.js"></script>
 
 <hr>
-
-
-{{!-- <div>
-
-    <div><a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
-            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
-
-</div> --}}
 
 
 </html>
