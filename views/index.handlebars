@@ -22,12 +22,22 @@
     <meta name="viewport" content="width=device-width">
     <title>Perfect Pizza</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Josefin+Slab:wght@200&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div>
         <div class="header">
             <h1>Perfect Pizza</h1>
+            <img src="https://endlessicons.com/wp-content/uploads/2012/09/pizza-icon-614x460.png" alt="" width="25%">
+
         </div>
 
         {{!-- <div class="cartTotal ">
@@ -50,9 +60,11 @@
                 </tr>
 
                 <tr>
-                    <td><strong>Medium</strong> <input class="btn addMedium" type="submit" value="addMedium">
-                        <input class="btn removeMedium" type="submit" value="removeMedium"></td>
-                    
+                    <td><strong>Medium</strong>
+                        {{!-- <input class="btn addMedium" type="submit" value="addMedium">
+                        <input class="btn removeMedium" type="submit" value="removeMedium">
+                    </td> --}}
+
                     <td><span class="mediumTotalPrice">R{{medium}}</span></td>
                 </tr>
                 <tr>

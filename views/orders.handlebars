@@ -1,5 +1,8 @@
 <h1>Orders</h1>
-<button><a href="/">Back</a></button>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<b><a href="/">Back</a></b>
 <table>
     <tr>
         <th>Orders</th>
@@ -16,8 +19,9 @@
             <td>{{orderId}}</td>
             <td>{{status}}</td>
             <td>{{amount}}</td>
-            <td><input type="button" value="pay">
-            <input type="button" value="collect"></td>
+            
+            <td><input type="button" name="status" value="pay">
+            <input type="button" class="hidden" name="status" value="collect"></td>
         </tr>
        
         {{/each}}

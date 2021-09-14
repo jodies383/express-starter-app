@@ -4,7 +4,7 @@ module.exports = function () {
 	let small = 0;
 	let medium = 0;
 	let large = 0;
-	let status = ""
+	let status = "Payment Due"
 	const order = []
 
 	function add(pizzaId) {
@@ -24,31 +24,26 @@ module.exports = function () {
 
 	}
 	function towns(checkedRadioBtn) {
-        var cptArr = regNum.filter((reg) => reg.startsWith("CA"))
-        var paarlArr = regNum.filter((reg) => reg.startsWith("CJ"))
-        var belArr = regNum.filter((reg) => reg.startsWith("CY"))
+		var cptArr = regNum.filter((reg) => reg.startsWith("CA"))
+		var paarlArr = regNum.filter((reg) => reg.startsWith("CJ"))
+		var belArr = regNum.filter((reg) => reg.startsWith("CY"))
 
-        if (checkedRadioBtn === "cpt") {
-            return cptArr
-        } else if (checkedRadioBtn === "paarl") {
-            return paarlArr
-        } else if (checkedRadioBtn === "bellville") {
-            return belArr
-        } else if (checkedRadioBtn === "all") {
-            return regNum
-        } else if (cptArr.length === 0 || paarlArr.length === 0 || belArr.length === 0 || regNum.length === 0) {
-            return noTownFound()
-        }
-
-
-    }
-	function returnOrder(button) {
-		status = "Payment Due"
-		if (button === "pay"){
-			status = "Paid"
-		} else if (button === "collect"){
-			status = "Collected"
+		if (checkedRadioBtn === "cpt") {
+			return cptArr
+		} else if (checkedRadioBtn === "paarl") {
+			return paarlArr
+		} else if (checkedRadioBtn === "bellville") {
+			return belArr
+		} else if (checkedRadioBtn === "all") {
+			return regNum
+		} else if (cptArr.length === 0 || paarlArr.length === 0 || belArr.length === 0 || regNum.length === 0) {
+			return noTownFound()
 		}
+
+
+	}
+	function returnOrder(button) {
+
 		if (counter > 0) {
 			order.push({
 				orderId: '#' + Math.floor((Math.random() * 100) + 1),
@@ -62,6 +57,13 @@ module.exports = function () {
 		medium = 0;
 		large = 0;
 		return order;
+	}
+
+	function hide(button){
+		if (button === "pay") {
+			status = "Paid"; 
+		}
+		return status
 	}
 	function returnCost() {
 		return counter.toFixed(2);
@@ -86,6 +88,7 @@ module.exports = function () {
 
 	return {
 		add,
+		hide,
 		returnOrder,
 		returnCost,
 		returnSmall,

@@ -34,7 +34,8 @@ app.post('/count', function (req, res) {
 	res.redirect('/')
 });
 app.get('/orders', function (req, res) {
-	res.render('orders', { order: pizza.returnOrder() })
+	res.render('orders', { order: pizza.returnOrder(req.body.status),
+		status: pizza.hide(req.body.status) })
 })
 
 // start  the server and start listening for HTTP request on the PORT number specified...
