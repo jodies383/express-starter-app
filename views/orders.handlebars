@@ -9,9 +9,7 @@
 
     <table>
         <tr>
-            <th>Orders</th>
         </tr>
-
         <table>
             <tr>
                 <th>Order ID</th>
@@ -24,9 +22,11 @@
                 <td>{{status}}</td>
                 <td>{{amount}}</td>
 
-                <td><input type="submit" class="payBtns" name="payBtns" value="pay">
+                <td>
+                    <input type="submit" class="payBtns" name="payBtns" value="pay">
                     <input type="submit" class="payBtns" name="payBtns" value="collect">
                 </td>
+
             </tr>
 
             {{/each}}

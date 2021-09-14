@@ -46,14 +46,6 @@ body {
 	background-color: #3FA9E2;
 }
 
-.field {
-	margin: 1em;
-}
-
-/* .field label {
-		margin: 1em;
-	} */
-
 .header {
 	color: #95cfee;
 	margin-left: 35%;
@@ -67,21 +59,14 @@ body {
 	margin-left: -70%;
 	width: 20%;
 }
-.back{
+
+.back {
 	margin: 2%;
 	font-size: x-large;
-
 }
+
 .orderBox {
 	display: flex;
-	/* position: fixed; */
-	/* width: 20em;
-		min-height: 25em;
-		background-color: violet;
-		top: 0em;
-		right: 0em;
-		margin-right: 1em;
-		padding: 1em; */
 }
 
 .hidden {
@@ -97,28 +82,20 @@ body {
 	border-style: none;
 	color: white;
 	border-radius: 0.25em;
-	/* display:block; */
-	/* height: 3px;
-	width: 3px; */
-	/* border-radius: 50%; */
-	/* border: 1px solid red; */
 }
-.orders{
+
+.orders {
 	text-align: right;
 	font-size: larger;
 }
+
 .cart {
+	width: 25%;
 	text-align: center;
-		padding: 1em;
+	padding: 1em;
 	border: 0.4em solid;
 	border-color: #d4e09b;
 	border-radius: 0.25em;
-}
-
-
-
-.cart table {
-	border-collapse: collapse;
 }
 
 .cart table {
@@ -129,7 +106,6 @@ body {
 .cart td {
 	border: 2px solid;
 	border-color: #d4e09b;
-
 }
 
 .cart th, td {
@@ -137,20 +113,6 @@ body {
 }
 
 .cart img {
-	width: 2em;
-}
-
-.cart h3 {
-	/* text-decoration: underline; */
-	display: inline;
-}
-
-.cartTotal {
-	padding: 1em;
-}
-
-.cartTotal img {
-	/* padding: 1em; */
 	width: 2em;
 }
 
@@ -171,13 +133,6 @@ body {
 	flex: 2;
 }
 
-.specials div {
-	flex: 1;
-	/* border: 1px solid lightgrey; */
-	margin: 0em;
-	padding: 1em;
-}
-
 .small img {
 	width: 4em;
 }
@@ -191,6 +146,7 @@ body {
 }
 
 .footer {
+	
 	display: flex;
 }
 
@@ -198,23 +154,12 @@ body {
 	display: none;
 }
 
-.qty {
-	padding: 0.5em;
-	width: 3em;
-}
-
 .pizza {
-	/* flex: 1; */
 	margin: 0.5em;
 	padding: 0.5em;
-	/* background-color: ; */
 	border-radius: 1em;
 	width: 40%;
 	display: inline-block;
-}
-
-label {
-	font-weight: bold;
 }
 
 select {
@@ -235,7 +180,6 @@ input[type=text], input[type=number], textarea {
 
 input[type=submit], button {
 	padding: 1em;
-	/* border: 0.3em solid #000; */
 	font-weight: bold;
 	font-size: 1em;
 }
@@ -253,9 +197,8 @@ table {
 th, td {
 	padding: 15px;
 }
-
-.space_below {
-	margin-bottom: 1em;
+.contact{
+	text-align: right;
 }
 
 @media (min-width: 768px) {
@@ -271,4 +214,5 @@ th, td {
 	body {
 		font-size: 1em;
 	}
+
 }

@@ -4,9 +4,6 @@ module.exports = function () {
 	let small = 0;
 	let medium = 0;
 	let large = 0;
-	// let status = "Payment Due"
-	// let status2 = "Paid"
-	// let status3 = "Collected"
 	const order = []
 
 	function add(pizzaId) {
@@ -64,9 +61,8 @@ module.exports = function () {
 		if (counter > 0) {
 			order.push({
 				orderId: '#' + Math.floor((Math.random() * 100) + 1),
-				status: hide(),
+				status: "payment due",
 				amount: 'R' + counter.toFixed(2)
-
 			});
 		}
 		counter = 0;
@@ -95,13 +91,6 @@ module.exports = function () {
 		return large.toFixed(2);
 	}
 
-	function remove(pizzaId) {
-
-	}
-
-	function list() {
-
-	}
 
 	return {
 		add,
@@ -111,9 +100,7 @@ module.exports = function () {
 		returnCost,
 		returnSmall,
 		returnMedium,
-		returnLarge,
-		remove,
-		list
+		returnLarge
 	}
 
 }

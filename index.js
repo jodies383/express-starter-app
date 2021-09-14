@@ -34,11 +34,19 @@ app.post('/count', function (req, res) {
 	pizza.add(req.body.actionType)
 	res.redirect('/')
 });
+
 app.get('/orders', function (req, res) {
 	pizza.hide(req.body.payBtns)
-	res.render('orders', { order: pizza.returnOrder(),
-		 })
+	let list = pizza.returnOrder();
+	console.log(list);
+	res.render('orders', {
+		order: list
+	})
 })
+
+
+
+
 
 // start  the server and start listening for HTTP request on the PORT number specified...
 app.listen(PORT, function () {
